@@ -1,0 +1,107 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "naming_series:naming_series",
+ "creation": "2025-12-08 16:53:27.854933",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "locker_id",
+  "assigned_to",
+  "naming_series",
+  "start_date",
+  "end_date",
+  "status",
+  "lock_fee",
+  "payment_status",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "locker_id",
+   "fieldtype": "Select",
+   "label": "Locker Id",
+   "options": "Locker 001\nLocker 002\nLocker 003\nLocker 004\nLocker 005\nLocker 006\nLocker 007\nLocker 008\nLocker 009\nLocker 010\nLocker 012\nLocker 013\nLocker 014\nLocker 015\nLocker 016\nLocker 017\nLocker 018\nLocker 019\nLocker 020\nLocker 021\nLocker 022\nLocker 023\nLocker 024\nLocker 025\nLocker 026\nLocker 027\nLocker 028\nLocker 029\nLocker 030\nLocker 031\nLocker 032\nLocker 033\nLocker 034\nLocker 035\nLocker 036\nLocker 037\nLocker 038\nLocker 039\nLocker 040\nLocker 041\nLocker 042\nLocker 043\nLocker 044\nLocker 045\nLocker 046\nLocker 047\nLocker 048\nLocker 049\nLocker 050\nLocker 051\nLocker 052\nLocker 053\nLocker 053\nLocker 054\nLocker 055\nLocker 056\nLocker 057\nLocker 058\nLocker 059\nLocker 060"
+  },
+  {
+   "fieldname": "assigned_to",
+   "fieldtype": "Link",
+   "label": "Assigned To",
+   "options": "Gym Member"
+  },
+  {
+   "default": "Lock.-.####",
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Naming series",
+   "options": "Lock.-.####\nLocker.-.###"
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "label": "Start Date"
+  },
+  {
+   "fieldname": "end_date",
+   "fieldtype": "Date",
+   "label": "End Date"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Draft\nActive\nExpired\nCancelled"
+  },
+  {
+   "fieldname": "lock_fee",
+   "fieldtype": "Currency",
+   "label": "Lock fee"
+  },
+  {
+   "fieldname": "payment_status",
+   "fieldtype": "Select",
+   "label": "Payment Status",
+   "options": "Unpaid\nPaid\nRefunded"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Gym Locker Booking",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2025-12-09 06:51:40.845352",
+ "modified_by": "Administrator",
+ "module": "Gym Management",
+ "name": "Gym Locker Booking",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
