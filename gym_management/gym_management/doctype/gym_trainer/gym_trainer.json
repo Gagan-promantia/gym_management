@@ -1,0 +1,130 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-12-08 16:33:17.900892",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "trainer_name",
+  "trainer_id",
+  "trainer_dob",
+  "address",
+  "certificate",
+  "experience_in_years",
+  "timmings",
+  "gender",
+  "phone",
+  "specialization",
+  "trainer_photo",
+  "email",
+  "bio",
+  "joined_on"
+ ],
+ "fields": [
+  {
+   "fieldname": "trainer_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Trainer Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Text",
+   "label": "Address"
+  },
+  {
+   "fieldname": "certificate",
+   "fieldtype": "Attach",
+   "label": "Certificate"
+  },
+  {
+   "fieldname": "experience_in_years",
+   "fieldtype": "Int",
+   "label": "Experience in years"
+  },
+  {
+   "fieldname": "timmings",
+   "fieldtype": "Select",
+   "label": "Timmings",
+   "options": "5:00 am - 1:30 pm\n1:30 pm-  9:30 pm"
+  },
+  {
+   "fieldname": "gender",
+   "fieldtype": "Select",
+   "label": "Gender",
+   "options": "Male\nFemale"
+  },
+  {
+   "fieldname": "trainer_id",
+   "fieldtype": "Data",
+   "label": "Trainer Id",
+   "read_only": 1
+  },
+  {
+   "fieldname": "phone",
+   "fieldtype": "Phone",
+   "label": "Phone"
+  },
+  {
+   "fieldname": "specialization",
+   "fieldtype": "Select",
+   "label": "Specialization",
+   "options": "Strength\nYoga\nZumba\nCardio\nCrossfit"
+  },
+  {
+   "fieldname": "trainer_dob",
+   "fieldtype": "Date",
+   "label": "Trainer DOB"
+  },
+  {
+   "fieldname": "trainer_photo",
+   "fieldtype": "Attach",
+   "label": "Trainer Photo"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email"
+  },
+  {
+   "fieldname": "bio",
+   "fieldtype": "Text",
+   "label": "Bio"
+  },
+  {
+   "fieldname": "joined_on",
+   "fieldtype": "Date",
+   "label": "Joined On"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-12-09 06:36:38.896649",
+ "modified_by": "Administrator",
+ "module": "Gym Management",
+ "name": "Gym Trainer",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "trainer_name"
+}

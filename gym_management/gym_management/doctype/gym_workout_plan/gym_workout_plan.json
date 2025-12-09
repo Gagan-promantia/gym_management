@@ -1,0 +1,84 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-12-09 06:52:00.878693",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "plan_name",
+  "level",
+  "description",
+  "duration_days",
+  "target_goal",
+  "status",
+  "exercises"
+ ],
+ "fields": [
+  {
+   "fieldname": "plan_name",
+   "fieldtype": "Data",
+   "label": "Plan Name"
+  },
+  {
+   "fieldname": "level",
+   "fieldtype": "Select",
+   "label": "Level",
+   "options": "Beginner\nIntermediate\nAdvanced"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Data",
+   "label": "Description"
+  },
+  {
+   "fieldname": "duration_days",
+   "fieldtype": "Int",
+   "label": "Duration (Days)"
+  },
+  {
+   "fieldname": "target_goal",
+   "fieldtype": "Select",
+   "label": "Target Goal",
+   "options": "Weight Loss\nMuscle Gain\nEndurance\nFlexibility"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Draft\nPublished\nInactive"
+  },
+  {
+   "fieldname": "exercises",
+   "fieldtype": "Table",
+   "label": "Exercises",
+   "options": "Gym Workout Plan Exercise"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-12-09 07:00:52.656103",
+ "modified_by": "Administrator",
+ "module": "Gym Management",
+ "name": "Gym Workout Plan",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

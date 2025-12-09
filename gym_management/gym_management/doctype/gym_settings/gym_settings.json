@@ -1,0 +1,69 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-12-09 07:01:26.363063",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "default_membership_duration",
+  "maximum_locker_booking_days",
+  "default_locker_fee",
+  "weekly_summary_day",
+  "enable_weekly_class"
+ ],
+ "fields": [
+  {
+   "fieldname": "default_membership_duration",
+   "fieldtype": "Int",
+   "label": "Default Membership Duration (Days)"
+  },
+  {
+   "fieldname": "maximum_locker_booking_days",
+   "fieldtype": "Int",
+   "label": "Maximum Locker Booking Days"
+  },
+  {
+   "fieldname": "default_locker_fee",
+   "fieldtype": "Currency",
+   "label": "Default Locker Fee"
+  },
+  {
+   "fieldname": "weekly_summary_day",
+   "fieldtype": "Select",
+   "label": "Weekly Summary Day",
+   "options": "Monday\nTuesday\nWednesday\nThursday\nFriday\nSaturday\nSunday"
+  },
+  {
+   "default": "0",
+   "fieldname": "enable_weekly_class",
+   "fieldtype": "Check",
+   "label": "Enable Weekly Class Emails"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "issingle": 1,
+ "links": [],
+ "modified": "2025-12-09 07:04:41.868944",
+ "modified_by": "Administrator",
+ "module": "Gym Management",
+ "name": "Gym Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}
