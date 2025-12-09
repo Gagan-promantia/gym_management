@@ -9,7 +9,10 @@
   "maximum_locker_booking_days",
   "default_locker_fee",
   "weekly_summary_day",
-  "enable_weekly_class"
+  "enable_weekly_class",
+  "gym_name",
+  "address",
+  "contact"
  ],
  "fields": [
   {
@@ -38,13 +41,28 @@
    "fieldname": "enable_weekly_class",
    "fieldtype": "Check",
    "label": "Enable Weekly Class Emails"
+  },
+  {
+   "fieldname": "gym_name",
+   "fieldtype": "Data",
+   "label": "Gym Name"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Small Text",
+   "label": "Address"
+  },
+  {
+   "fieldname": "contact",
+   "fieldtype": "Phone",
+   "label": "Contact"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2025-12-09 07:04:41.868944",
+ "modified": "2025-12-09 14:52:04.273835",
  "modified_by": "Administrator",
  "module": "Gym Management",
  "name": "Gym Settings",
@@ -57,6 +75,16 @@
    "print": 1,
    "read": 1,
    "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "Gym Admin",
    "share": 1,
    "write": 1
   }

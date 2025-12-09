@@ -6,7 +6,6 @@
  "engine": "InnoDB",
  "field_order": [
   "member",
-  "class_name",
   "trainer",
   "class_type",
   "amended_from",
@@ -22,11 +21,6 @@
    "fieldtype": "Link",
    "label": "Member",
    "options": "Gym Member"
-  },
-  {
-   "fieldname": "class_name",
-   "fieldtype": "Data",
-   "label": "Class Name"
   },
   {
    "fieldname": "trainer",
@@ -74,14 +68,14 @@
    "fieldname": "booking_status",
    "fieldtype": "Select",
    "label": "Booking Status",
-   "options": "Draft\nConfirmed\nCancelled\nCompleted"
+   "options": "Scheduled\nCompleted\nCancelled"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-12-09 06:43:48.082722",
+ "modified": "2025-12-09 17:51:02.617318",
  "modified_by": "Administrator",
  "module": "Gym Management",
  "name": "Gym class Booking",
@@ -98,11 +92,25 @@
    "role": "System Manager",
    "share": 1,
    "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Gym Admin",
+   "share": 1,
+   "write": 1
   }
  ],
  "row_format": "Dynamic",
  "rows_threshold_for_grid_search": 20,
+ "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "class_type"
 }
