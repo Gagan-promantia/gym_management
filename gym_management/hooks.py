@@ -27,7 +27,7 @@ app_license = "mit"
 # include js, css files in header of desk.html
 # app_include_css = "/assets/gym_management/css/gym_management.css"
 # app_include_js = "/assets/gym_management/js/gym_management.js"
-
+#app_include_js = "/assets/gym_management/js/trainer_notification.js"
 # include js, css files in header of web template
 # web_include_css = "/assets/gym_management/css/gym_management.css"
 # web_include_js = "/assets/gym_management/js/gym_management.js"
@@ -165,6 +165,11 @@ app_license = "mit"
 # 		"gym_management.tasks.monthly"
 # 	],
 # }
+scheduler_events = {
+    "daily": [
+        "gym_management.gym_management.doctype.gym_membership.gym_membership.auto_expire_gym_memberships"
+    ]
+}
 
 # Testing
 # -------

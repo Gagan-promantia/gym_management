@@ -5,32 +5,12 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "trainer_id",
-  "trainer_name",
-  "trainer_plan_type",
+  "gym_trainer",
+  "gym_member",
   "start_date",
-  "end_date",
-  "status"
+  "end_date"
  ],
  "fields": [
-  {
-   "fieldname": "trainer_id",
-   "fieldtype": "Link",
-   "label": "Trainer Id",
-   "options": "Gym Trainer"
-  },
-  {
-   "fetch_from": "trainer id.trainer_name",
-   "fieldname": "trainer_name",
-   "fieldtype": "Data",
-   "label": "Trainer Name"
-  },
-  {
-   "fieldname": "trainer_plan_type",
-   "fieldtype": "Select",
-   "label": "Trainer Plan Type",
-   "options": "Yearly\nMonthly"
-  },
   {
    "fieldname": "start_date",
    "fieldtype": "Date",
@@ -42,16 +22,22 @@
    "label": "End Date"
   },
   {
-   "fieldname": "status",
-   "fieldtype": "Select",
-   "label": "Status",
-   "options": "Draft\nActive\nExpired\nCancelled\nSuspended"
+   "fieldname": "gym_trainer",
+   "fieldtype": "Link",
+   "label": "Gym Trainer",
+   "options": "Gym Trainer"
+  },
+  {
+   "fieldname": "gym_member",
+   "fieldtype": "Link",
+   "label": "Gym Member",
+   "options": "Gym Member"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-12-09 14:36:50.424636",
+ "modified": "2025-12-10 14:57:28.522858",
  "modified_by": "Administrator",
  "module": "Gym Management",
  "name": "Gym Trainer Subscription",
@@ -84,7 +70,9 @@
  ],
  "row_format": "Dynamic",
  "rows_threshold_for_grid_search": 20,
+ "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "gym_member"
 }

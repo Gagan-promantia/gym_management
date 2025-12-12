@@ -1,0 +1,86 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2025-12-10 12:43:24.710526",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "gym_member",
+  "member_mail_id",
+  "start_date",
+  "gym_member_plan_type",
+  "expiry_date",
+  "amount",
+  "status"
+ ],
+ "fields": [
+  {
+   "fieldname": "gym_member",
+   "fieldtype": "Link",
+   "label": "Gym Member",
+   "options": "Gym Member"
+  },
+  {
+   "fetch_from": "gym_member.email",
+   "fieldname": "member_mail_id",
+   "fieldtype": "Data",
+   "label": "Memeber mail I d"
+  },
+  {
+   "fieldname": "gym_member_plan_type",
+   "fieldtype": "Link",
+   "label": "Gym Member Plan Type",
+   "options": "Gym Membership Plan"
+  },
+  {
+   "fieldname": "start_date",
+   "fieldtype": "Date",
+   "label": "Start Date"
+  },
+  {
+   "fieldname": "expiry_date",
+   "fieldtype": "Date",
+   "label": "Expiry Date"
+  },
+  {
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "label": "Amount"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Active\nExpired\nCancelled\nPending"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-12-11 18:02:40.157480",
+ "modified_by": "Administrator",
+ "module": "Gym Management",
+ "name": "Gym Membership",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "gym_member"
+}
