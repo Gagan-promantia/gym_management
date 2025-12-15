@@ -13,7 +13,7 @@ class GymTrainerSubscription(Document):
         if not trainer_user:
             frappe.throw(f"Trainer '{doc.trainer}' does not have a linked User account!")
 
-        # 1️⃣ Real-time popup notification
+        #  Real-time popup notification
         frappe.publish_realtime(
             event="trainer_subscription_alert",
             message={

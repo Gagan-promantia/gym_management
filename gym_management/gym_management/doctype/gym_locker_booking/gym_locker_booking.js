@@ -54,25 +54,3 @@ function apply_locker_filter(frm) {
         }
     });
 }
-// frappe.ui.form.on("Gym Locker Booking", {
-//     refresh(frm) {
-//         filter_available_lockers(frm);
-//     },
-//     start_date(frm) {
-//         filter_available_lockers(frm);
-//     },
-//     end_date(frm) {
-//         filter_available_lockers(frm);
-//     }
-// });
-
-// function filter_available_lockers(frm) {
-
-//     frm.set_query("locker_id", () => {
-//         return {
-//             filters: {
-//                 status: "Available"
-//             }
-//         };
-//     });
-// }

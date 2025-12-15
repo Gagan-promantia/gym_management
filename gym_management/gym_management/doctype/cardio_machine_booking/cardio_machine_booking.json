@@ -33,7 +33,8 @@
   {
    "fieldname": "time_slot",
    "fieldtype": "Select",
-   "label": "Time slot"
+   "label": "Time slot",
+   "options": "6 AM-7 AM\n7 AM-8 AM\n8 AM-9 AM\n4 PM-5 PM\n5 PM-6 PM\n6 PM-7 PM\n7 PM - 8 PM\n8 PM-9 PM\n9 PM- 10 PM"
   },
   {
    "fieldname": "duration_minutes",
@@ -44,7 +45,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-12-15 18:38:44.456061",
+ "modified": "2025-12-15 19:01:05.699486",
  "modified_by": "Administrator",
  "module": "Gym Management",
  "name": "Cardio Machine Booking",

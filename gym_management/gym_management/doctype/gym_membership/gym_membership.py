@@ -65,3 +65,8 @@ def update_status(self):
         self.status = "Active"
     else:
         self.status = "Expired"
+
+@frappe.whitelist()
+def get_print_context(**kwargs):
+    if frappe.session.user != "Administrator":
+        frappe.throw("You are not permitted to print or download this document.")

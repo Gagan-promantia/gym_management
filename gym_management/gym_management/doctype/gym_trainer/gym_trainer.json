@@ -18,7 +18,8 @@
   "trainer_photo",
   "email",
   "bio",
-  "joined_on"
+  "joined_on",
+  "trainer_user"
  ],
  "fields": [
   {
@@ -96,12 +97,18 @@
    "fieldname": "joined_on",
    "fieldtype": "Date",
    "label": "Joined On"
+  },
+  {
+   "fieldname": "trainer_user",
+   "fieldtype": "Link",
+   "label": "Trainer User",
+   "options": "User"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-12-09 14:29:12.856507",
+ "modified": "2025-12-15 19:24:52.831490",
  "modified_by": "Administrator",
  "module": "Gym Management",
  "name": "Gym Trainer",

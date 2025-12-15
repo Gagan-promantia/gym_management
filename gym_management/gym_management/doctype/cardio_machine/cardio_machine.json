@@ -45,7 +45,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-12-15 18:37:35.823206",
+ "modified": "2025-12-15 19:01:52.264884",
  "modified_by": "Administrator",
  "module": "Gym Management",
  "name": "Cardio Machine",
@@ -79,7 +79,9 @@
  ],
  "row_format": "Dynamic",
  "rows_threshold_for_grid_search": 20,
+ "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "machine_name"
 }

@@ -35,21 +35,35 @@ frappe.ui.form.on("Gym Membership", {
         } catch (err) {
             console.error("Error fetching plan:", err);
         }
-    // },
-    // refresh(frm) {
-    //     const roles = frappe.user_roles;
+     },
+      refresh(frm) {
+        frappe.call({
+            method: "frappe.client.get_value",
+            args: {
+                doctype: "User",
+                filters: { "name": frappe.session.user },
+                fieldname: ["name"]
+            },
+            callback: function(r) {
+                let current_user = frappe.session.user;
 
-    //     // Roles allowed to print
-    //     const allowed_roles = ["System Manager", "Gym Admin"];
+                // Allow only 'Administrator' to print or download
+                if (current_user !== "Administrator") {
 
-    //     // If user does NOT have any allowed role → hide print options
-    //     const can_print = roles.some(role => allowed_roles.includes(role));
+                    // Hide print button
+                    frm.page.hide_icon_group();  
 
-    //     if (!can_print) {
-    //         frm.page.hide_menu_item("Print");
-    //         frm.page.hide_menu_item("PDF");
-    //         frm.disable_print();
-    //     }
-     }
+                    // Disable Print action dropdown
+                    frm.page.wrapper.find('.menu-btn-group').hide();
+
+                    // Disable print icon
+                    frm.page.wrapper.find('.btn-print-print').hide();
+
+                    // Disable PDF icon
+                    frm.page.wrapper.find('.btn-download-pdf').hide();
+                }
+            }
+        });
+    }
 });
 
