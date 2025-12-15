@@ -12,7 +12,6 @@
   "class_date",
   "start_time",
   "end_time",
-  "max_capacity",
   "booking_status"
  ],
  "fields": [
@@ -60,11 +59,6 @@
    "label": "End Time"
   },
   {
-   "fieldname": "max_capacity",
-   "fieldtype": "Int",
-   "label": "Maximum Capacity"
-  },
-  {
    "fieldname": "booking_status",
    "fieldtype": "Select",
    "label": "Booking Status",
@@ -75,7 +69,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-12-09 17:51:02.617318",
+ "modified": "2025-12-15 11:10:32.159041",
  "modified_by": "Administrator",
  "module": "Gym Management",
  "name": "Gym class Booking",

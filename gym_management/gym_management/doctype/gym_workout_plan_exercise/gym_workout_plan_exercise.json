@@ -17,37 +17,44 @@
   {
    "fieldname": "exercise_name",
    "fieldtype": "Data",
+   "in_list_view": 1,
    "label": "Exercise Name"
   },
   {
    "fieldname": "day",
    "fieldtype": "Select",
+   "in_list_view": 1,
    "label": "Day",
    "options": "Day 1\nDay 2\nDay 3\nDay 4\nDay 5\nDay 6\nDay 7"
   },
   {
    "fieldname": "sets",
    "fieldtype": "Int",
+   "in_list_view": 1,
    "label": "Sets"
   },
   {
    "fieldname": "reps",
    "fieldtype": "Int",
+   "in_list_view": 1,
    "label": "Reps"
   },
   {
    "fieldname": "duration_mins",
    "fieldtype": "Int",
+   "in_list_view": 1,
    "label": "Duration (Min)"
   },
   {
    "fieldname": "rest_time",
    "fieldtype": "Int",
+   "in_list_view": 1,
    "label": "Rest Time (Secs)"
   },
   {
    "fieldname": "trainer_notes",
    "fieldtype": "Small Text",
+   "in_list_view": 1,
    "label": "Trainer Notes"
   }
  ],
@@ -55,7 +62,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2025-12-09 14:35:43.111901",
+ "modified": "2025-12-12 15:08:47.457029",
  "modified_by": "Administrator",
  "module": "Gym Management",
  "name": "Gym Workout Plan Exercise",

@@ -4,3 +4,4 @@
 
 [post_model_sync]
 # Patches added in this section will be executed after doctypes are migrated
+gym_management.gym_management.doctype.gym_locker.patches.update_all_record_status_field_to_available

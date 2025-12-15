@@ -19,9 +19,9 @@
  "fields": [
   {
    "fieldname": "locker_id",
-   "fieldtype": "Select",
+   "fieldtype": "Link",
    "label": "Locker Id",
-   "options": "Locker 001\nLocker 002\nLocker 003\nLocker 004\nLocker 005\nLocker 006\nLocker 007\nLocker 008\nLocker 009\nLocker 010\nLocker 012\nLocker 013\nLocker 014\nLocker 015\nLocker 016\nLocker 017\nLocker 018\nLocker 019\nLocker 020\nLocker 021\nLocker 022\nLocker 023\nLocker 024\nLocker 025\nLocker 026\nLocker 027\nLocker 028\nLocker 029\nLocker 030\nLocker 031\nLocker 032\nLocker 033\nLocker 034\nLocker 035\nLocker 036\nLocker 037\nLocker 038\nLocker 039\nLocker 040\nLocker 041\nLocker 042\nLocker 043\nLocker 044\nLocker 045\nLocker 046\nLocker 047\nLocker 048\nLocker 049\nLocker 050\nLocker 051\nLocker 052\nLocker 053\nLocker 053\nLocker 054\nLocker 055\nLocker 056\nLocker 057\nLocker 058\nLocker 059\nLocker 060"
+   "options": "Gym Locker"
   },
   {
    "fieldname": "assigned_to",
@@ -51,7 +51,7 @@
    "fieldname": "status",
    "fieldtype": "Select",
    "label": "Status",
-   "options": "Draft\nActive\nExpired\nCancelled"
+   "options": "Available\nOccupied"
   },
   {
    "fieldname": "lock_fee",
@@ -79,7 +79,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-12-09 14:36:09.559082",
+ "modified": "2025-12-15 15:12:57.400990",
  "modified_by": "Administrator",
  "module": "Gym Management",
  "name": "Gym Locker Booking",

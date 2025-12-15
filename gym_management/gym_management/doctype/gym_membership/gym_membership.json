@@ -11,7 +11,8 @@
   "gym_member_plan_type",
   "expiry_date",
   "amount",
-  "status"
+  "status",
+  "contact"
  ],
  "fields": [
   {
@@ -52,12 +53,18 @@
    "fieldtype": "Select",
    "label": "Status",
    "options": "Active\nExpired\nCancelled\nPending"
+  },
+  {
+   "fetch_from": "gym_member.phone_number",
+   "fieldname": "contact",
+   "fieldtype": "Phone",
+   "label": "Contact"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-12-11 18:02:40.157480",
+ "modified": "2025-12-14 20:05:24.642415",
  "modified_by": "Administrator",
  "module": "Gym Management",
  "name": "Gym Membership",
@@ -72,6 +79,30 @@
    "read": 1,
    "report": 1,
    "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Gym Admin",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Gym Trainer",
    "share": 1,
    "write": 1
   }

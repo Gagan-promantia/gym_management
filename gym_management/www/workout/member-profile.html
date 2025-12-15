@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Member Profile</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background: #f2f2f2;
+        }
+
+        .profile-box {
+            background: white;
+            padding: 20px;
+            width: 800px;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 8px rgba(0,0,0,0.1);
+        }
+
+        h2, h3 {
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+        }
+
+        table {
+            width: 100%;
+            margin-top: 10px;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 8px;
+            border: 1px solid #ccc;
+        }
+        th { background: #eee; }
+    </style>
+</head>
+
+<body>
+
+<div class="profile-box">
+
+    <h2>Member Profile</h2>
+
+    <div id="basic-info">Loading...</div>
+     <br>
+    <h3>Active Membership</h3>
+    <div id="active-plan"></div>
+    <br>
+    <h3>Allocated Trainer</h3>
+    <div id="trainer-info"></div>
+    <br>
+    <h3>Past Membership Plans</h3>
+    <div id="past-plans"></div>
+
+</div>
+
+<script>
+async function loadProfile() {
+
+    const params = new URLSearchParams(window.location.search);
+    const member_id = params.get("member_id");
+
+    if (!member_id) {
+        document.getElementById("basic-info").innerHTML = "Invalid Member ID";
+        return;
+    }
+
+    // 
+    // FETCH MEMBER DETAILS
+    const memberRes = await fetch(`/api/resource/Gym Member/${member_id}`);
+    const member = (await memberRes.json()).data;
+
+    document.getElementById("basic-info").innerHTML = `
+        <p><b>Name:</b> ${member.member_name}</p>
+        <p><b>Email:</b> ${member.email || "-"}</p>
+        <p><b>Phone:</b> ${member.phone_number || "-"}</p>
+    `;
+
+
+    // ----------------------------------------------------
+    //  FETCH ACTIVE MEMBERSHIP
+    const activeRes = await fetch(
+        `/api/resource/Gym%20Membership?filters=[["gym_member","=","${member_id}"],["status","=","Active"]]`
+    );
+    const activeData = await activeRes.json();
+
+    if (activeData.data.length > 0) {
+
+        const recordName = activeData.data[0].name;
+
+        const fullRes = await fetch(`/api/resource/Gym%20Membership/${recordName}`);
+        const full = (await fullRes.json()).data;
+
+        // Fetch Plan Name
+        let planName = full.gym_member_plan_type;
+        if (planName) {
+            const planRes = await fetch(`/api/resource/Gym%20Membership%20Plan/${planName}`);
+            const planDoc = (await planRes.json()).data;
+            planName = planDoc.plan_name;
+        }
+
+        const start = new Date(full.start_date);
+        const end = new Date(full.expiry_date);
+        const today = new Date();
+        const diff = Math.ceil((end - today) / (1000 * 60 * 60 * 24));
+
+        document.getElementById("active-plan").innerHTML = `
+            <p><b>Plan:</b> ${planName}</p>
+            <p><b>Start Date:</b> ${full.start_date}</p>
+            <p><b>Expiry Date:</b> ${full.expiry_date}</p>
+            <p><b>Remaining Days:</b> ${diff >= 0 ? diff : 0}</p>
+        `;
+    } else {
+        document.getElementById("active-plan").innerHTML = "No active plan.";
+    }
+
+
+    // ----------------------------------------------------
+    // FETCH TRAINER SUBSCRIPTION
+    const trainerRes = await fetch(
+        `/api/resource/Gym%20Trainer%20Subscription?filters=[["gym_member","=","${member_id}"]]`
+    );
+    const trainerData = await trainerRes.json();
+
+    if (trainerData.data.length > 0) {
+
+        const trainerRecord = trainerData.data[0];
+
+        const fullTrainerRes = await fetch(`/api/resource/Gym%20Trainer%20Subscription/${trainerRecord.name}`);
+        const t = (await fullTrainerRes.json()).data;
+
+        // Fetch trainer's real name
+        let trainerName = t.gym_trainer;
+        if (trainerName) {
+            const tn = await fetch(`/api/resource/Gym%20Trainer/${trainerName}`);
+            const trainerDoc = (await tn.json()).data;
+            trainerName = trainerDoc.trainer_name || trainerDoc.coach_name || trainerName;
+        }
+
+        document.getElementById("trainer-info").innerHTML = `
+            <p><b>Trainer:</b> ${trainerName}</p>
+            <p><b>Start:</b> ${t.start_date}</p>
+            <p><b>End:</b> ${t.end_date}</p>
+        `;
+    } else {
+        document.getElementById("trainer-info").innerHTML = "No trainer assigned.";
+    }
+
+
+    // ----------------------------------------------------
+    //  FETCH PAST MEMBERSHIP PLANS
+    const pastRes = await fetch(
+        `/api/resource/Gym%20Membership?filters=[["gym_member","=","${member_id}"],["status","=","Expired"]]`
+    );
+    const pastData = await pastRes.json();
+
+    if (pastData.data.length > 0) {
+
+        let html = `
+        <table>
+            <tr>
+                <th>Plan</th>
+                <th>Start</th>
+                <th>Expiry</th>
+            </tr>`;
+
+        for (let row of pastData.data) {
+
+            const fullRes = await fetch(`/api/resource/Gym%20Membership/${row.name}`);
+            const full = (await fullRes.json()).data;
+
+            // Fetch proper plan name
+            let pastPlanName = full.gym_member_plan_type;
+            if (pastPlanName) {
+                const pRes = await fetch(`/api/resource/Gym%20Membership%20Plan/${pastPlanName}`);
+                const pDoc = (await pRes.json()).data;
+                pastPlanName = pDoc.plan_name;
+            }
+
+            html += `
+                <tr>
+                    <td>${pastPlanName}</td>
+                    <td>${full.start_date}</td>
+                    <td>${full.expiry_date}</td>
+                </tr>`;
+        }
+
+        html += `</table>`;
+        document.getElementById("past-plans").innerHTML = html;
+
+    } else {
+        document.getElementById("past-plans").innerHTML = "No past plans.";
+    }
+}
+
+
+//  Load Profile Page
+loadProfile();
+</script>
+
+</body>
+</html>

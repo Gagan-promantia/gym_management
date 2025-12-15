@@ -5,64 +5,38 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "default_membership_duration",
-  "maximum_locker_booking_days",
-  "default_locker_fee",
-  "weekly_summary_day",
-  "enable_weekly_class",
   "gym_name",
-  "address",
-  "contact"
+  "opening_time",
+  "closing_time",
+  "total_lockers"
  ],
  "fields": [
-  {
-   "fieldname": "default_membership_duration",
-   "fieldtype": "Int",
-   "label": "Default Membership Duration (Days)"
-  },
-  {
-   "fieldname": "maximum_locker_booking_days",
-   "fieldtype": "Int",
-   "label": "Maximum Locker Booking Days"
-  },
-  {
-   "fieldname": "default_locker_fee",
-   "fieldtype": "Currency",
-   "label": "Default Locker Fee"
-  },
-  {
-   "fieldname": "weekly_summary_day",
-   "fieldtype": "Select",
-   "label": "Weekly Summary Day",
-   "options": "Monday\nTuesday\nWednesday\nThursday\nFriday\nSaturday\nSunday"
-  },
-  {
-   "default": "0",
-   "fieldname": "enable_weekly_class",
-   "fieldtype": "Check",
-   "label": "Enable Weekly Class Emails"
-  },
   {
    "fieldname": "gym_name",
    "fieldtype": "Data",
    "label": "Gym Name"
   },
   {
-   "fieldname": "address",
-   "fieldtype": "Small Text",
-   "label": "Address"
+   "fieldname": "opening_time",
+   "fieldtype": "Time",
+   "label": "Opening Time"
   },
   {
-   "fieldname": "contact",
-   "fieldtype": "Phone",
-   "label": "Contact"
+   "fieldname": "closing_time",
+   "fieldtype": "Time",
+   "label": "Closing Time"
+  },
+  {
+   "fieldname": "total_lockers",
+   "fieldtype": "Int",
+   "label": "Total Lockers"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "issingle": 1,
  "links": [],
- "modified": "2025-12-09 14:52:04.273835",
+ "modified": "2025-12-15 16:10:45.900636",
  "modified_by": "Administrator",
  "module": "Gym Management",
  "name": "Gym Settings",

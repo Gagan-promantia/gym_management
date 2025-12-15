@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Workout Plan Details</title>
+
+    <!-- Optional Styling -->
+    <style>
+            body {
+            margin: 0;
+            padding: 0;
+            background: url("/assets/gym_management/files/gym_background_image.jpg") no-repeat center center fixed;
+            background-size: cover;      /* FULL SCREEN */
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+            }
+
+        h1,h2 {
+            margin-bottom: 10px;
+            color: #f0f0f0;
+        }
+
+        .info-box {
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            background: #fafafa;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        table th, table td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+            color: #f0f0f0;
+        }
+
+        table th {
+            background: #f0f0f0;
+            color: black;
+        }
+
+        */
+        .content-box {
+            background: rgba(255, 255, 255, 0.9); /* Light transparent box */
+            padding: 30px;
+            border-radius: 12px;
+            width: 80%;
+            max-width: 900px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+
+<body>
+    <class class="content-box">
+    <h1>Workout Plan Details</h1>
+
+    <div id="plan-details">Loading...</div>
+
+    <script>
+        async function fetchWorkoutPlan() {
+
+            // URL sample: /gym-workout-plan/workout-plan?name=n61rkqj949
+            const params = new URLSearchParams(window.location.search);
+            const planName = params.get("name");
+
+            if (!planName) {
+                document.getElementById("plan-details").innerHTML = "Invalid Workout Plan.";
+                return;
+            }
+
+            // Fetch doc from Frappe REST API
+            const response = await fetch(`/api/resource/Gym Workout Plan/${planName}`);
+            const data = await response.json();
+            const plan = data.data;
+
+            // Prepare UI
+            let html = `
+                <div class="info-box">
+                    <p><strong>Plan Name:</strong> ${plan.workout_plan_name}</p>
+                    <p><strong>Level:</strong> ${plan.level}</p>
+                    <p><strong>Goal:</strong> ${plan.target_goal}</p>
+                    <p><strong>Duration:</strong> ${plan.duration_days} days</p>
+                    <p><strong>Description:</strong> ${plan.description}</p>
+                </div>
+            `;
+            // Fetch child table Exercises
+            const exercises = plan.exercises;
+
+            if (exercises.length > 0) {
+                html += `
+                    <h2>Exercises</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Day</th>
+                                <th>Exercise</th>
+                                <th>Sets</th>
+                                <th>Reps</th>
+                                <th>Duration (min)</th>
+                                <th>Rest (sec)</th>
+                                <th>Notes</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                `;
+
+                exercises.forEach(ex => {
+                    html += `
+                        <tr>
+                            <td>${ex.day}</td>
+                            <td>${ex.exercise_name}</td>
+                            <td>${ex.sets || "-"}</td>
+                            <td>${ex.reps || "-"}</td>
+                            <td>${ex.duration_mins || "-"}</td>
+                            <td>${ex.rest_time || "-"}</td>
+                            <td>${ex.trainer_notes || "-"}</td>
+                        </tr>
+                    `;
+                });
+
+                html += `</tbody></table>`;
+            } else {
+                html += `<p>No exercises added for this plan.</p>`;
+            }
+
+            document.getElementById("plan-details").innerHTML = html;
+        }
+
+        fetchWorkoutPlan();
+    </script>
+</class>
+</div>
+</body>
+</html>

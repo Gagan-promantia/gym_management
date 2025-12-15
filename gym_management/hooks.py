@@ -144,7 +144,11 @@ app_license = "mit"
 # 		"on_trash": "method"
 # 	}
 # }
-
+doc_events = {
+    "Gym Trainer Subscription": {
+        "after_insert": "gym_management.gym_management.doctype.gym_trainer_subscription.gym_trainer_subscription.after_insert"
+    }
+}
 # Scheduled Tasks
 # ---------------
 
@@ -168,6 +172,9 @@ app_license = "mit"
 scheduler_events = {
     "daily": [
         "gym_management.gym_management.doctype.gym_membership.gym_membership.auto_expire_gym_memberships"
+    ],
+    "weekly": [
+        "gym_management.gym_management.doctype.gym_class_booking.gym_class_booking.send_weekly_class_summary"
     ]
 }
 

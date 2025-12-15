@@ -1,0 +1,61 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:locker_code",
+ "creation": "2025-12-14 23:26:54.777155",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "locker_code",
+  "status",
+  "is_active"
+ ],
+ "fields": [
+  {
+   "fieldname": "locker_code",
+   "fieldtype": "Data",
+   "label": "Locker Code",
+   "unique": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Available\nMaintenance\nDisabled"
+  },
+  {
+   "default": "1",
+   "fieldname": "is_active",
+   "fieldtype": "Check",
+   "label": "Is Active"
+  }
+ ],
+ "grid_page_length": 50,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2025-12-14 23:33:08.885415",
+ "modified_by": "Administrator",
+ "module": "Gym Management",
+ "name": "Gym Locker",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "rows_threshold_for_grid_search": 20,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

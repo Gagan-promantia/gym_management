@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:Machine-{####}",
  "creation": "2025-12-09 13:14:57.084236",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -44,10 +45,11 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-12-09 14:33:02.494446",
+ "modified": "2025-12-15 18:37:35.823206",
  "modified_by": "Administrator",
  "module": "Gym Management",
  "name": "Cardio Machine",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

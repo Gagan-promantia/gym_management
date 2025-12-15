@@ -5,20 +5,16 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "plan_name",
+  "workout_plan_name",
   "level",
   "description",
   "duration_days",
   "target_goal",
   "status",
-  "exercises"
+  "exercises",
+  "is_published"
  ],
  "fields": [
-  {
-   "fieldname": "plan_name",
-   "fieldtype": "Data",
-   "label": "Plan Name"
-  },
   {
    "fieldname": "level",
    "fieldtype": "Select",
@@ -52,12 +48,23 @@
    "fieldtype": "Table",
    "label": "Exercises",
    "options": "Gym Workout Plan Exercise"
+  },
+  {
+   "fieldname": "workout_plan_name",
+   "fieldtype": "Data",
+   "label": "Workout Plan Name"
+  },
+  {
+   "default": "0",
+   "fieldname": "is_published",
+   "fieldtype": "Check",
+   "label": "is published"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-12-09 14:34:13.807301",
+ "modified": "2025-12-12 18:22:10.229106",
  "modified_by": "Administrator",
  "module": "Gym Management",
  "name": "Gym Workout Plan",
@@ -90,7 +97,10 @@
  ],
  "row_format": "Dynamic",
  "rows_threshold_for_grid_search": 20,
+ "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "workout_plan_name",
+ "translated_doctype": 1
 }

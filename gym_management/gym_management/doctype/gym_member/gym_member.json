@@ -14,7 +14,6 @@
   "member_weight",
   "address",
   "medical_certificate",
-  "gym_trainer",
   "phone_number",
   "email",
   "member_photo"
@@ -84,18 +83,12 @@
    "fieldname": "member_photo",
    "fieldtype": "Attach",
    "label": "Member Photo"
-  },
-  {
-   "fieldname": "gym_trainer",
-   "fieldtype": "Link",
-   "label": "Gym Trainer",
-   "options": "Gym Trainer"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-12-10 15:55:50.535977",
+ "modified": "2025-12-14 02:44:44.051333",
  "modified_by": "Administrator",
  "module": "Gym Management",
  "name": "Gym Member",
