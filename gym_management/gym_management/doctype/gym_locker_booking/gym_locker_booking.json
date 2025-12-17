@@ -1,16 +1,16 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "naming_series:naming_series",
+ "autoname": "format:{locker_id}-{###}",
  "creation": "2025-12-08 16:53:27.854933",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "locker_id",
   "assigned_to",
-  "naming_series",
   "start_date",
   "end_date",
+  "column_break_pc9z",
   "status",
   "lock_fee",
   "payment_status",
@@ -20,40 +20,41 @@
   {
    "fieldname": "locker_id",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Locker Id",
-   "options": "Gym Locker"
+   "options": "Gym Locker",
+   "reqd": 1
   },
   {
    "fieldname": "assigned_to",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Assigned To",
-   "options": "Gym Member"
-  },
-  {
-   "default": "Lock.-.####",
-   "fieldname": "naming_series",
-   "fieldtype": "Select",
-   "hidden": 1,
-   "label": "Naming series",
-   "options": "Lock.-.####\nLocker.-.###"
+   "options": "Gym Member",
+   "reqd": 1
   },
   {
    "fieldname": "start_date",
    "fieldtype": "Date",
-   "label": "Start Date"
+   "in_list_view": 1,
+   "label": "Start Date",
+   "reqd": 1
   },
   {
    "fieldname": "end_date",
    "fieldtype": "Date",
-   "label": "End Date"
+   "in_list_view": 1,
+   "label": "End Date",
+   "reqd": 1
   },
   {
    "fieldname": "status",
    "fieldtype": "Select",
    "label": "Status",
-   "options": "Available\nOccupied"
+   "options": "Draft\nActive\nExpired\nCancelled"
   },
   {
+   "fetch_from": "locker_id.fee",
    "fieldname": "lock_fee",
    "fieldtype": "Currency",
    "label": "Lock fee"
@@ -73,17 +74,21 @@
    "print_hide": 1,
    "read_only": 1,
    "search_index": 1
+  },
+  {
+   "fieldname": "column_break_pc9z",
+   "fieldtype": "Column Break"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-12-15 15:12:57.400990",
+ "modified": "2025-12-17 16:57:06.118567",
  "modified_by": "Administrator",
  "module": "Gym Management",
  "name": "Gym Locker Booking",
- "naming_rule": "By \"Naming Series\" field",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

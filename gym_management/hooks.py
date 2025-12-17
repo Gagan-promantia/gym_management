@@ -149,6 +149,7 @@ doc_events = {
         "after_insert": "gym_management.gym_management.doctype.gym_trainer_subscription.gym_trainer_subscription.after_insert"
     }
 }
+
 # Scheduled Tasks
 # ---------------
 

@@ -9,6 +9,26 @@ frappe.query_reports["Fitness Journey Report"] = {
             fieldtype: "Link",
             options: "Gym Member",
             reqd: 0
+        },
+        {
+            fieldname: "month",
+            label: "Month",
+            fieldtype: "Select",
+            options: [
+                "",
+                "January",
+                "February",
+                "March",
+                "April",
+                "May",
+                "June",
+                "July",
+                "August",
+                "September",
+                "October",
+                "November",
+                "December"
+            ]
         }
     ]
 };

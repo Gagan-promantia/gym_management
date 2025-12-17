@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:{workout_plan_name}",
  "creation": "2025-12-09 06:52:00.878693",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -64,10 +65,11 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-12-12 18:22:10.229106",
+ "modified": "2025-12-16 13:11:33.464209",
  "modified_by": "Administrator",
  "module": "Gym Management",
  "name": "Gym Workout Plan",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

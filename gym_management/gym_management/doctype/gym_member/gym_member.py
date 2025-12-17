@@ -6,6 +6,4 @@ from frappe.model.document import Document
 
 
 class GymMember(Document):
-	def autoname(self):
-		self.name=frappe.model.naming.make_autoname("GYM-MEM-.#####")
-		self.member_id=self.name
+    pass

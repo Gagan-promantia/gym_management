@@ -1,37 +1,45 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:GYM-{class_type}-{####}",
  "creation": "2025-12-08 17:40:30.309623",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "member",
   "trainer",
-  "class_type",
   "amended_from",
   "class_date",
+  "column_break_cc5s",
   "start_time",
   "end_time",
+  "class_type",
   "booking_status"
  ],
  "fields": [
   {
    "fieldname": "member",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Member",
-   "options": "Gym Member"
+   "options": "Gym Member",
+   "reqd": 1
   },
   {
    "fieldname": "trainer",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Trainer",
-   "options": "Gym Trainer"
+   "options": "Gym Trainer",
+   "reqd": 1
   },
   {
    "fieldname": "class_type",
    "fieldtype": "Select",
+   "in_list_view": 1,
    "label": "Class Type",
-   "options": "Aerobics\nFitness\nCardio\nYoga\nBoxing"
+   "options": "Aerobics\nFitness\nCardio\nYoga\nBoxing",
+   "reqd": 1
   },
   {
    "fieldname": "amended_from",
@@ -63,16 +71,21 @@
    "fieldtype": "Select",
    "label": "Booking Status",
    "options": "Scheduled\nCompleted\nCancelled"
+  },
+  {
+   "fieldname": "column_break_cc5s",
+   "fieldtype": "Column Break"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-12-15 11:10:32.159041",
+ "modified": "2025-12-17 17:00:54.690119",
  "modified_by": "Administrator",
  "module": "Gym Management",
  "name": "Gym class Booking",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
@@ -106,5 +119,5 @@
  "sort_field": "modified",
  "sort_order": "DESC",
  "states": [],
- "title_field": "class_type"
+ "title_field": "member"
 }

@@ -6,7 +6,24 @@ from frappe.model.document import Document
 from frappe.utils import getdate, add_days, today
 
 class GymclassBooking(Document):
-	pass
+
+    def on_submit(self):
+        self.update_class_status()
+
+    def update_class_status(self):
+        """
+        If class_date is before today,
+        automatically mark booking_status as Completed
+        """
+
+        if not self.class_date:
+            return
+
+        class_date = getdate(self.class_date)
+        today_date = getdate(today())
+
+        if class_date < today_date:
+            self.booking_status = "Completed"
 
 def send_weekly_class_summary():
     end_date = today()

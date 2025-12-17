@@ -8,7 +8,7 @@ class GymLockerBooking(Document):
     def validate(self):
         self.validate_dates()
         self.validate_locker_availability()
-        self.update_status()
+        self.set_booking_status()
 
     def validate_dates(self):
         if self.start_date and self.end_date and self.end_date < self.start_date:
@@ -34,19 +34,24 @@ class GymLockerBooking(Document):
                 f"Locker {self.locker_id} is already booked for the selected period."
             )
 
-
-
-    def update_status(self):
+    def set_booking_status(self):
         today_date = today()
 
         if self.start_date > today_date:
             self.status = "Draft"
         elif self.start_date <= today_date <= self.end_date:
             self.status = "Active"
-            frappe.db.set_value("Gym Locker", self.locker_id, "status", "Occupied")
         else:
             self.status = "Expired"
-            frappe.db.set_value("Gym Locker", self.locker_id, "status", "Available")
+
+    #  Lock locker ONLY on submit
+    def on_submit(self):
+        frappe.db.set_value("Gym Locker", self.locker_id, "status", "Occupied")
+
+    #  Release locker on cancel
+    def on_cancel(self):
+        frappe.db.set_value("Gym Locker", self.locker_id, "status", "Available")
+
 
 
 

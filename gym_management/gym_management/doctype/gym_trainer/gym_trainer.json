@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:GYM-{trainer_name}-{###}",
  "creation": "2025-12-08 16:33:17.900892",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -12,12 +13,13 @@
   "certificate",
   "experience_in_years",
   "timmings",
+  "column_break_r3r9",
   "gender",
   "phone",
   "specialization",
-  "trainer_photo",
-  "email",
   "bio",
+  "email",
+  "trainer_photo",
   "joined_on",
   "trainer_user"
  ],
@@ -65,7 +67,8 @@
   {
    "fieldname": "phone",
    "fieldtype": "Phone",
-   "label": "Phone"
+   "label": "Phone",
+   "reqd": 1
   },
   {
    "fieldname": "specialization",
@@ -86,7 +89,8 @@
   {
    "fieldname": "email",
    "fieldtype": "Data",
-   "label": "Email"
+   "label": "Email",
+   "reqd": 1
   },
   {
    "fieldname": "bio",
@@ -102,16 +106,22 @@
    "fieldname": "trainer_user",
    "fieldtype": "Link",
    "label": "Trainer User",
-   "options": "User"
+   "options": "User",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_r3r9",
+   "fieldtype": "Column Break"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-12-15 19:24:52.831490",
+ "modified": "2025-12-17 17:03:25.317364",
  "modified_by": "Administrator",
  "module": "Gym Management",
  "name": "Gym Trainer",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {

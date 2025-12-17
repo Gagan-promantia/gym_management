@@ -1,20 +1,21 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "format:GYM-{member_name}-{###}",
  "creation": "2025-12-08 15:39:04.883644",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
   "section_break_huww",
   "member_name",
-  "member_id",
   "member_dob",
   "gender",
+  "phone_number",
+  "column_break_4gyw",
   "member_height",
   "member_weight",
   "address",
   "medical_certificate",
-  "phone_number",
   "email",
   "member_photo"
  ],
@@ -25,14 +26,6 @@
    "in_list_view": 1,
    "label": "Member Name",
    "reqd": 1
-  },
-  {
-   "fieldname": "member_id",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Member Id",
-   "read_only": 1,
-   "unique": 1
   },
   {
    "fieldname": "gender",
@@ -67,7 +60,8 @@
   {
    "fieldname": "phone_number",
    "fieldtype": "Phone",
-   "label": "Phone Number"
+   "label": "Phone Number",
+   "reqd": 1
   },
   {
    "fieldname": "member_dob",
@@ -77,21 +71,27 @@
   {
    "fieldname": "email",
    "fieldtype": "Data",
-   "label": "Email"
+   "label": "Email",
+   "reqd": 1
   },
   {
    "fieldname": "member_photo",
    "fieldtype": "Attach",
    "label": "Member Photo"
+  },
+  {
+   "fieldname": "column_break_4gyw",
+   "fieldtype": "Column Break"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-12-14 02:44:44.051333",
+ "modified": "2025-12-17 16:58:40.392183",
  "modified_by": "Administrator",
  "module": "Gym Management",
  "name": "Gym Member",
+ "naming_rule": "Expression",
  "owner": "Administrator",
  "permissions": [
   {
@@ -117,6 +117,15 @@
    "role": "Gym Admin",
    "share": 1,
    "write": 1
+  },
+  {
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Gym Trainer",
+   "share": 1
   }
  ],
  "row_format": "Dynamic",

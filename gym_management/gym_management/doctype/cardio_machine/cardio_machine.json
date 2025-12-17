@@ -1,7 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
- "autoname": "format:Machine-{####}",
+ "autoname": "cardio.-.{machine_type}.-.##",
  "creation": "2025-12-09 13:14:57.084236",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -16,13 +16,17 @@
   {
    "fieldname": "machine_name",
    "fieldtype": "Data",
-   "label": "Machine Name"
+   "in_list_view": 1,
+   "label": "Machine Name",
+   "reqd": 1
   },
   {
    "fieldname": "machine_type",
    "fieldtype": "Select",
+   "in_list_view": 1,
    "label": "Machine Type",
-   "options": "Treadmill\nCycle\nStepper"
+   "options": "Treadmill\nCycle\nStepper",
+   "reqd": 1
   },
   {
    "default": "0",
@@ -45,11 +49,11 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-12-15 19:01:52.264884",
+ "modified": "2025-12-16 08:36:59.455469",
  "modified_by": "Administrator",
  "module": "Gym Management",
  "name": "Cardio Machine",
- "naming_rule": "Expression",
+ "naming_rule": "Expression (old style)",
  "owner": "Administrator",
  "permissions": [
   {

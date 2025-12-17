@@ -16,14 +16,18 @@
   {
    "fieldname": "gym_member",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Gym Member",
-   "options": "Gym Member"
+   "options": "Gym Member",
+   "reqd": 1
   },
   {
    "fieldname": "cardio_machine",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Cardio Machine",
-   "options": "Cardio Machine"
+   "options": "Cardio Machine",
+   "reqd": 1
   },
   {
    "fieldname": "booking_date",
@@ -45,7 +49,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-12-15 19:01:05.699486",
+ "modified": "2025-12-16 08:37:12.269920",
  "modified_by": "Administrator",
  "module": "Gym Management",
  "name": "Cardio Machine Booking",

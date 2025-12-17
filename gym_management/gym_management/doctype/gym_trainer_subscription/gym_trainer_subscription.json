@@ -1,6 +1,7 @@
 {
  "actions": [],
  "allow_rename": 1,
+ "autoname": "GTS.-.{gym_member}.-.###",
  "creation": "2025-12-08 16:46:53.522282",
  "doctype": "DocType",
  "engine": "InnoDB",
@@ -8,17 +9,19 @@
   "gym_trainer",
   "gym_member",
   "member_contact",
-  "start_date",
-  "plan_type",
   "end_date",
+  "column_break_npgz",
   "status",
+  "start_date",
   "trainer_user"
  ],
  "fields": [
   {
    "fieldname": "start_date",
    "fieldtype": "Date",
-   "label": "Start Date"
+   "in_list_view": 1,
+   "label": "Start Date",
+   "reqd": 1
   },
   {
    "fieldname": "end_date",
@@ -28,20 +31,18 @@
   {
    "fieldname": "gym_trainer",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Gym Trainer",
-   "options": "Gym Trainer"
+   "options": "Gym Trainer",
+   "reqd": 1
   },
   {
    "fieldname": "gym_member",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Gym Member",
-   "options": "Gym Member"
-  },
-  {
-   "fieldname": "plan_type",
-   "fieldtype": "Link",
-   "label": "Plan type",
-   "options": "Gym Membership Plan"
+   "options": "Gym Member",
+   "reqd": 1
   },
   {
    "fieldname": "status",
@@ -53,7 +54,9 @@
    "fetch_from": "gym_member.phone_number",
    "fieldname": "member_contact",
    "fieldtype": "Data",
-   "label": "Member Contact"
+   "in_list_view": 1,
+   "label": "Member Contact",
+   "reqd": 1
   },
   {
    "fetch_from": "gym_trainer.trainer_user",
@@ -61,15 +64,20 @@
    "fieldtype": "Link",
    "label": "Trainer User",
    "options": "User"
+  },
+  {
+   "fieldname": "column_break_npgz",
+   "fieldtype": "Column Break"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2025-12-15 19:26:07.017373",
+ "modified": "2025-12-17 17:42:58.845807",
  "modified_by": "Administrator",
  "module": "Gym Management",
  "name": "Gym Trainer Subscription",
+ "naming_rule": "Expression (old style)",
  "owner": "Administrator",
  "permissions": [
   {

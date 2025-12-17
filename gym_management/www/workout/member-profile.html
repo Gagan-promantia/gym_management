@@ -67,7 +67,6 @@ async function loadProfile() {
         return;
     }
 
-    // 
     // FETCH MEMBER DETAILS
     const memberRes = await fetch(`/api/resource/Gym Member/${member_id}`);
     const member = (await memberRes.json()).data;
@@ -79,7 +78,7 @@ async function loadProfile() {
     `;
 
 
-    // ----------------------------------------------------
+
     //  FETCH ACTIVE MEMBERSHIP
     const activeRes = await fetch(
         `/api/resource/Gym%20Membership?filters=[["gym_member","=","${member_id}"],["status","=","Active"]]`
@@ -117,7 +116,6 @@ async function loadProfile() {
     }
 
 
-    // ----------------------------------------------------
     // FETCH TRAINER SUBSCRIPTION
     const trainerRes = await fetch(
         `/api/resource/Gym%20Trainer%20Subscription?filters=[["gym_member","=","${member_id}"]]`
@@ -149,7 +147,6 @@ async function loadProfile() {
     }
 
 
-    // ----------------------------------------------------
     //  FETCH PAST MEMBERSHIP PLANS
     const pastRes = await fetch(
         `/api/resource/Gym%20Membership?filters=[["gym_member","=","${member_id}"],["status","=","Expired"]]`

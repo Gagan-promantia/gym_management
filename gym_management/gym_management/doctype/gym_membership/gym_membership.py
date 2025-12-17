@@ -6,9 +6,9 @@ from frappe.model.document import Document
 from frappe.utils import today
 
 class GymMembership(Document):
-    def validate(self):
-        update_status(self)
-
+    # def validate(self):
+    #     update_status(self)
+    pass
     
 
 def auto_expire_gym_memberships():
@@ -50,21 +50,7 @@ def auto_expire_gym_memberships():
 
     frappe.db.commit()
 
-def update_status(self):
-    if not self.start_date or not self.expiry_date:
-        self.status = "Pending"
-        return
 
-    start = frappe.utils.getdate(self.start_date)
-    end = frappe.utils.getdate(self.expiry_date)
-    today = frappe.utils.getdate()
-
-    if today < start:
-        self.status = "Upcoming"
-    elif start <= today <= end:
-        self.status = "Active"
-    else:
-        self.status = "Expired"
 
 @frappe.whitelist()
 def get_print_context(**kwargs):
