@@ -1,0 +1,44 @@
+{% set plans = frappe.get_all(
+    "Gym Workout Plan",
+    fields=["name", "workout_plan_name", "level", "description", "is_published"],
+    filters={"is_published": 1}
+) %}
+<style>
+    body {
+            margin: 0;
+            padding: 0;
+            background: url("/assets/gym_management/files/gym_background_image.jpg") no-repeat center center fixed;
+            background-size: cover;     
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+            }
+    h2{
+        color: aliceblue;
+    }
+    .plan-box{
+        background-color: aliceblue;
+    }
+</style>
+    <br><br>
+<h2>Available Workout Plans</h2>
+
+{% if plans %}
+    <div class="plans">
+        {% for p in plans %}
+            <div class="plan-box" style="border:1px solid #ddd; padding:15px; margin:10px; border-radius:6px;">
+                <h3>{{ p.workout_plan_name }}</h3>
+                <p><strong>Level:</strong> {{ p.level }}</p>
+                <p>{{ p.description }}</p>
+
+                <a href="/workout/workout-plan?name={{ p.name }}" class="btn btn-primary">
+                    
+    View Details
+</a>
+
+            </div>
+            <br><br>
+        {% endfor %}
+    </div>
+{% else %}
+    <p>No workout plans published.</p>
+{% endif %}

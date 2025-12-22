@@ -1,38 +1,42 @@
 {
  "actions": [],
  "allow_rename": 1,
- "creation": "2025-12-08 16:13:16.379307",
+ "autoname": "MEM.-.{gym_member_plan_type}.-.###",
+ "creation": "2025-12-10 12:43:24.710526",
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "member_id",
-  "member_name",
-  "subscription_plan_type",
+  "gym_member",
   "start_date",
+  "contact",
+  "gym_member_plan_type",
+  "column_break_fbi9",
   "expiry_date",
-  "status",
   "amount",
-  "payment_status",
-  "amended_from"
+  "status",
+  "member_mail_id"
  ],
  "fields": [
   {
-   "fieldname": "member_id",
+   "fieldname": "gym_member",
    "fieldtype": "Link",
-   "label": "Member Id",
-   "options": "Gym Member"
+   "in_list_view": 1,
+   "label": "Gym Member",
+   "options": "Gym Member",
+   "reqd": 1
   },
   {
-   "fetch_from": "member_id.member_name",
-   "fieldname": "member_name",
+   "fetch_from": "gym_member.email",
+   "fieldname": "member_mail_id",
    "fieldtype": "Data",
-   "label": "Member Name"
+   "label": "Memeber mail I d"
   },
   {
-   "fieldname": "subscription_plan_type",
-   "fieldtype": "Select",
-   "label": "Subscription  Plan Type",
-   "options": "Monthly\nYearly"
+   "fieldname": "gym_member_plan_type",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Gym Member Plan Type",
+   "options": "Gym Membership Plan"
   },
   {
    "fieldname": "start_date",
@@ -45,41 +49,35 @@
    "label": "Expiry Date"
   },
   {
-   "fieldname": "status",
-   "fieldtype": "Select",
-   "label": "Status",
-   "options": "Draft\nActive\nExpired\nCancelled\nSuspended"
-  },
-  {
    "fieldname": "amount",
-   "fieldtype": "Int",
+   "fieldtype": "Currency",
    "label": "Amount"
   },
   {
-   "fieldname": "payment_status",
+   "fieldname": "status",
    "fieldtype": "Select",
-   "label": "Payment Status",
-   "options": "Unpaid\nPaid\nPartially Paid\nRefunded"
+   "label": "Status",
+   "options": "Active\nExpired\nCancelled\nPending"
   },
   {
-   "fieldname": "amended_from",
-   "fieldtype": "Link",
-   "label": "Amended From",
-   "no_copy": 1,
-   "options": "Gym Membership",
-   "print_hide": 1,
-   "read_only": 1,
-   "search_index": 1
+   "fetch_from": "gym_member.phone_number",
+   "fieldname": "contact",
+   "fieldtype": "Phone",
+   "label": "Contact"
+  },
+  {
+   "fieldname": "column_break_fbi9",
+   "fieldtype": "Column Break"
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
- "is_submittable": 1,
  "links": [],
- "modified": "2025-12-09 06:30:42.588051",
+ "modified": "2025-12-17 16:56:28.924450",
  "modified_by": "Administrator",
  "module": "Gym Management",
  "name": "Gym Membership",
+ "naming_rule": "Expression (old style)",
  "owner": "Administrator",
  "permissions": [
   {
@@ -93,11 +91,38 @@
    "role": "System Manager",
    "share": 1,
    "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Gym Admin",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Gym Trainer",
+   "select": 1,
+   "share": 1,
+   "write": 1
   }
  ],
  "row_format": "Dynamic",
  "rows_threshold_for_grid_search": 20,
+ "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
- "states": []
+ "states": [],
+ "title_field": "gym_member"
 }
